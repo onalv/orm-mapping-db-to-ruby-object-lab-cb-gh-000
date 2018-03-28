@@ -25,7 +25,7 @@ class Student
     # find the student in the database given a name
     # return a new instance of the Student class
     sql = <<-SQL
-      SELECT *
+      SELECT * 
       FROM students
       WHERE name = ?
     SQL
@@ -57,5 +57,9 @@ class Student
   def self.drop_table
     sql = "DROP TABLE IF EXISTS students"
     DB[:conn].execute(sql)
+  end
+
+  def count_all_students_in_grade_9
+
   end
 end
